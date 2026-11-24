@@ -1,0 +1,26 @@
+﻿# ==============================================================================
+#  Meeting Assistant — Desktop app (Windows, PySide6)           requirements.txt
+# ------------------------------------------------------------------------------
+#  Python : 3.12            Platform: Windows 10 (2004+) / Windows 11
+#  Install: python -m venv .venv
+#           .venv\Scripts\python.exe -m pip install -r requirements.txt
+#  Notes  : Direct dependencies only, every version pinned for reproducible
+#           builds. The fully resolved set is in requirements-lock.txt.
+# ==============================================================================
+
+# --- User interface -------------------------------------------------------------
+PySide6==6.12.0                  # Qt UI: main window, floating answer view, screen capture
+qrcode==8.2                      # join-meeting QR code
+pillow==13.0.0                   # image backend for qrcode; screenshot tooling
+
+# --- Audio capture --------------------------------------------------------------
+PyAudioWPatch==0.2.12.9; sys_platform == "win32"   # WASAPI loopback (system audio)
+numpy==2.5.4                     # audio buffers, level meter, resampling
+
+# --- Networking -----------------------------------------------------------------
+httpx==0.28.1                    # REST client (auth, meetings, documents, screen-ask)
+websocket-client==1.9.2          # realtime answer / transcript stream
+
+# --- Configuration & diagnostics ------------------------------------------------
+python-dotenv==1.2.4             # .env loading
+psutil==7.2.2                    # process / resource diagnostics

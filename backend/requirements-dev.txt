@@ -1,0 +1,13 @@
+# ==============================================================================
+#  Meeting Assistant — Backend development & QA tools      requirements-dev.txt
+# ------------------------------------------------------------------------------
+#  Install: .venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+#  Used by: the live end-to-end tests in backend/tests/ (live_e2e_api.py,
+#           live_screen_intelligence.py, ...), which talk to a running backend
+#           over HTTP + WebSocket exactly like the web and desktop apps do.
+# ==============================================================================
+-r requirements.txt
+
+httpx==0.28.1                    # HTTP client for end-to-end API tests
+websocket-client==1.9.2          # WebSocket client for end-to-end streaming tests
+pillow==13.0.0                   # renders synthetic screenshots for Screen Intelligence tests

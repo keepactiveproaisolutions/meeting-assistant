@@ -1,0 +1,10 @@
+{
+  "name": "meeting-assistant",
+  "private": true,
+  "description": "Convenience scripts so web-app commands also work from the project root.",
+  "scripts": {
+    "dev": "npm --prefix web-app run dev -- --host",
+    "build": "npm --prefix web-app run build",
+    "install:web": "npm --prefix web-app install"
+  }
+}

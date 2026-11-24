@@ -1,0 +1,21 @@
+# ==============================================================================
+#  Meeting Assistant — all Python dependencies                  requirements.txt
+# ------------------------------------------------------------------------------
+#  Components
+#    backend/      FastAPI service  (AI answers, RAG, live transcription, screen intelligence)
+#    desktop-app/  PySide6 Windows client (audio + screen capture, answer view)
+#    web-app/      React client      (npm install  — see web-app/package.json)
+#
+#  Recommended: one virtual environment per component
+#    backend\.venv\Scripts\python.exe      -m pip install -r backend\requirements.txt
+#    desktop-app\.venv\Scripts\python.exe  -m pip install -r desktop-app\requirements.txt
+#
+#  Reproducible, fully pinned installs (incl. transitive packages):
+#    backend\requirements-lock.txt   desktop-app\requirements-lock.txt
+#  Test & QA tools:
+#    backend\requirements-dev.txt
+#
+#  Single shared environment (development convenience):  pip install -r requirements.txt
+# ==============================================================================
+-r backend/requirements.txt
+-r desktop-app/requirements.txt

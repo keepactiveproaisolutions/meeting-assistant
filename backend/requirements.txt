@@ -1,0 +1,39 @@
+# ==============================================================================
+#  Meeting Assistant — Backend (FastAPI)                       requirements.txt
+# ------------------------------------------------------------------------------
+#  Python : 3.12
+#  Install: python -m venv .venv
+#           .venv\Scripts\python.exe -m pip install -r requirements.txt
+#  Notes  : Direct dependencies only, every version pinned for reproducible
+#           builds. The fully resolved set (incl. transitive packages) is in
+#           requirements-lock.txt. Test/QA tools are in requirements-dev.txt.
+# ==============================================================================
+
+# --- Web framework & realtime ---------------------------------------------------
+fastapi==0.162.7                 # REST API + WebSocket endpoints
+uvicorn[standard]==0.54.0        # ASGI server (uvloop-class performance, reload, websockets)
+python-multipart==0.0.33         # multipart uploads: documents, audio chunks, screenshots
+websockets==17.4                 # live transcription relay to the OpenAI Realtime API
+
+# --- Data layer -----------------------------------------------------------------
+SQLAlchemy[asyncio]==2.1.8       # async ORM
+asyncpg==0.32.0                  # PostgreSQL driver
+alembic==1.20.1                  # database migrations
+pgvector==0.5.1                  # vector similarity search for document retrieval (RAG)
+numpy==2.5.4                     # vector math required by pgvector
+
+# --- Validation & configuration -------------------------------------------------
+pydantic==2.14.3                 # request/response schemas
+pydantic-settings==2.16.3        # typed settings loaded from .env
+email-validator==2.3.0           # EmailStr validation for sign-up / login
+
+# --- Security -------------------------------------------------------------------
+PyJWT==2.15.1                    # access tokens
+bcrypt==5.0.0                    # password hashing
+
+# --- AI -------------------------------------------------------------------------
+openai==3.51.0                   # chat, vision (screen intelligence), embeddings, transcription
+
+# --- Document ingestion ---------------------------------------------------------
+pypdf==7.1.0                     # PDF text extraction (CV, JD, contracts, reports)
+python-docx==1.2.0               # Word (.docx) text extraction
